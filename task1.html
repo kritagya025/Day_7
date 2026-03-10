@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button id="click">Click me</button> -->
+     <p id="p">0</p>
+     <button id="btn">Click me</button>
+    <script>
+        // const btn = document.getElementById("click");
+        // console.log(btn);
+        // btn.addEventListener("click",function(){
+        //     console.log("Button clicked");
+        // })
+        const btn=document.getElementById("btn");
+        const p=document.getElementById("p");
+        btn.addEventListener("click",function(){
+            p.innerText++;
+        })
+    </script>
+</body>
+</html>

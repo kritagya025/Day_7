@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Form Example</h2>
+
+    <form id="form">
+
+        <input type="email" id="email" placeholder="Enter email">
+
+        <input type="password" id="pass" placeholder="Enter password">
+
+        <button type="submit">Submit</button>
+
+    </form>
+</body>
+
+<script>
+    const form = document.querySelector("#form")
+    const emailInput = document.querySelector("#email")
+    const passInput = document.querySelector("#pass")
+
+    form.addEventListener("submit", function (e) {
+
+        e.preventDefault()
+
+        const email = emailInput.value
+        const pass = passInput.value;
+
+        const hasCapital = /[A-Z]/.test(pass)
+        const hasNumber = /[0-9]/.test(pass)
+        if(pass.length<8 && pass.length>10 && hasCapital && hasNumber){
+            console.log("Email:", email)
+            console.log("Password:", pass)
+        }
+        else{
+            console.log("Invalid Password")
+        }
+
+    })
+</script>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>TO-DO List</h2>
+    <input tye="text" id="tinput" placeholder="Enter a new task">
+    <button id="btn">ADD</button>
+    <ul id="list">My task</ul>
+    <script>
+        const btn = document.getElementById("btn");
+        const tinput = document.getElementById("tinput");
+        const list = document.getElementById("list");
+        btn.addEventListener("click", function () {
+            const task = tinput.value;
+            const ntask = document.createElement("li");
+            ntask.innerText = task;
+            list.appendChild(ntask);
+            tinput.value = "";
+        })
+
+        list.addEventListener("click", function (e) {
+            if (e.target.tagName === "LI") {
+                e.target.style.textDecoration = "line-through"
+            }
+        })
+    </script>
+</body>
+
+</html>
