@@ -32,7 +32,6 @@
     </div>
 
     <script>
-        // Your original logic remains untouched
         const btn = document.getElementById("btn");
         const tinput = document.getElementById("tinput");
         const list = document.getElementById("list");
@@ -41,7 +40,6 @@
             const task = tinput.value;
             const ntask = document.createElement("li");
             
-            // Adding specific Tailwind classes for the new list items
             ntask.className = "border-2 border-black p-3 cursor-pointer hover:bg-gray-100 transition-colors list-none mb-2";
             
             ntask.innerText = task;
