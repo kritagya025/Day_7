@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h2>TO-DO List</h2>
-    <input tye="text" id="tinput" placeholder="Enter a new task">
-    <button id="btn">ADD</button>
-    <ul id="list">My task</ul>
+<body class="bg-white text-black min-h-screen flex items-center justify-center font-mono">
+
+    <div class="w-full max-w-md p-8 border-4 border-black shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]">
+        
+        <h2 class="text-4xl font-black mb-6 uppercase italic tracking-widest border-b-4 border-black pb-2">
+            TO-DO List
+        </h2>
+
+        <div class="flex flex-col gap-4">
+            <input type="text" id="tinput" placeholder="Enter a new task" 
+                class="w-full border-2 border-black p-3 text-lg outline-none focus:bg-black focus:text-white transition-colors placeholder:text-gray-400">
+            
+            <button id="btn" 
+                class="w-full bg-black text-white font-bold py-3 uppercase tracking-tighter hover:bg-white hover:text-black border-2 border-black transition-all active:translate-y-1">
+                ADD
+            </button>
+        </div>
+
+        <ul id="list" class="mt-8 space-y-2 text-lg font-bold italic">
+            <span class="text-xs font-normal not-italic uppercase opacity-30">My tasks</span>
+            </ul>
+
+    </div>
+
     <script>
+        // Your original logic remains untouched
         const btn = document.getElementById("btn");
         const tinput = document.getElementById("tinput");
         const list = document.getElementById("list");
+
         btn.addEventListener("click", function () {
             const task = tinput.value;
             const ntask = document.createElement("li");
+            
+            // Adding specific Tailwind classes for the new list items
+            ntask.className = "border-2 border-black p-3 cursor-pointer hover:bg-gray-100 transition-colors list-none mb-2";
+            
             ntask.innerText = task;
             list.appendChild(ntask);
             tinput.value = "";
@@ -31,5 +56,4 @@
         })
     </script>
 </body>
-
 </html>
